@@ -1,5 +1,5 @@
 {
-    "name": "hyperf/zby",
+    "name": "taxcode/zby-component",
     "type": "library",
     "license": "MIT",
     "version": "dev-master",
