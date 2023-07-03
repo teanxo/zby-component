@@ -1,8 +1,8 @@
 {
-    "name": "zby-component",
+    "name": "hyperf/zby",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "dev-master",
     "keywords": [
         "php",
         "hyperf"
