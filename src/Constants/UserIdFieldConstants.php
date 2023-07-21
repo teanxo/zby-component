@@ -4,6 +4,7 @@ namespace Hyperf\Zby\Constants;
 use Hyperf\Constants\AbstractConstants;
 use Hyperf\Constants\Annotation\Constants;
 
+
 /**
  * 数据库字段信息
  */
