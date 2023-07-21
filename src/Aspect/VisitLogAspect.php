@@ -19,7 +19,7 @@ use Psr\Http\Message\ResponseInterface;
 class VisitLogAspect extends AbstractAspect
 {
     public array $annotations = [
-        VisitLogEvent::class
+        VisitLog::class
     ];
 
     protected ContainerInterface $container;
@@ -32,14 +32,14 @@ class VisitLogAspect extends AbstractAspect
 
     public function process(ProceedingJoinPoint $proceedingJoinPoint)
     {
-        $annotation = $proceedingJoinPoint->getAnnotationMetadata()->method[VisitLogEvent::class];
+        $annotation = $proceedingJoinPoint->getAnnotationMetadata()->method[VisitLog::class];
         /* @var $result ResponseInterface */
         $result = $proceedingJoinPoint->process();
 
         if (!empty($annotation->menuName)) {
             // 触发事件调度器
             $evDispatcher = $this->container->get(EventDispatcherInterface::class);
-            $evDispatcher->dispatch(new VisitLog($this->getRequestInfo([
+            $evDispatcher->dispatch(new VisitLogEvent($this->getRequestInfo([
                 'name' => $annotation->menuName,
                 'response_code' => $result->getStatusCode(),
                 'response_data' => $result->getBody()->getContents()
