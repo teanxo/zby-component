@@ -2,6 +2,7 @@
 
 namespace Hyperf\Zby\Aspect;
 
+use Hyperf\Codec\Json;
 use Hyperf\Context\ApplicationContext;
 use Hyperf\Di\Annotation\Aspect;
 use Hyperf\Di\Aop\AbstractAspect;
@@ -62,7 +63,7 @@ class VisitLogAspect extends AbstractAspect
             'ip' => $request->ip(),
             'ip_location' => Str::ipToRegion($request->ip()),
             'menu_name' => $data['name'],
-            'request_data' => $request->all(),
+            'request_data' => Json::encode($request->all()),
             'response_code' => $data['response_code'],
             'response_data' => $data['response_data']
         ];
