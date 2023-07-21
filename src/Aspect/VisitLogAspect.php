@@ -7,7 +7,7 @@ use Hyperf\Di\Annotation\Aspect;
 use Hyperf\Di\Aop\AbstractAspect;
 use Hyperf\Di\Aop\ProceedingJoinPoint;
 use Hyperf\Zby\Annotation\VisitLog;
-use Hyperf\Zby\Event\Operation;
+use Hyperf\Zby\Event\VisitLog;
 use Hyperf\Zby\Helper\LoginUser;
 use Hyperf\Zby\Helper\Str;
 use Hyperf\Zby\ZbyRequest;
@@ -39,7 +39,7 @@ class VisitLogAspect extends AbstractAspect
         if (!empty($annotation->menuName)) {
             // 触发事件调度器
             $evDispatcher = $this->container->get(EventDispatcherInterface::class);
-            $evDispatcher->dispatch(new Operation($this->getRequestInfo([
+            $evDispatcher->dispatch(new VisitLog($this->getRequestInfo([
                 'name' => $annotation->menuName,
                 'response_code' => $result->getStatusCode(),
                 'response_data' => $result->getBody()->getContents()
