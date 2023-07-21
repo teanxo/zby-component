@@ -7,7 +7,7 @@ namespace Hyperf\Zby\Event;
 /**
  * 提供全局访问日志事件
  */
-class VisitLog
+class VisitLogEvent
 {
     public function __construct(
         public array $requestInfo

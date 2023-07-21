@@ -7,7 +7,7 @@ use Hyperf\Di\Annotation\Aspect;
 use Hyperf\Di\Aop\AbstractAspect;
 use Hyperf\Di\Aop\ProceedingJoinPoint;
 use Hyperf\Zby\Annotation\VisitLog;
-use Hyperf\Zby\Event\VisitLog;
+use Hyperf\Zby\Event\VisitLogEvent;
 use Hyperf\Zby\Helper\LoginUser;
 use Hyperf\Zby\Helper\Str;
 use Hyperf\Zby\ZbyRequest;
@@ -19,7 +19,7 @@ use Psr\Http\Message\ResponseInterface;
 class VisitLogAspect extends AbstractAspect
 {
     public array $annotations = [
-        VisitLog::class
+        VisitLogEvent::class
     ];
 
     protected ContainerInterface $container;
@@ -32,7 +32,7 @@ class VisitLogAspect extends AbstractAspect
 
     public function process(ProceedingJoinPoint $proceedingJoinPoint)
     {
-        $annotation = $proceedingJoinPoint->getAnnotationMetadata()->method[VisitLog::class];
+        $annotation = $proceedingJoinPoint->getAnnotationMetadata()->method[VisitLogEvent::class];
         /* @var $result ResponseInterface */
         $result = $proceedingJoinPoint->process();
 

@@ -5,7 +5,7 @@ namespace Hyperf\Zby\Listener;
 use Hyperf\DbConnection\Db;
 use Hyperf\Event\Annotation\Listener;
 use Hyperf\Event\Contract\ListenerInterface;
-use Hyperf\Zby\Event\VisitLog;
+use Hyperf\Zby\Event\VisitLogEvent;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -23,7 +23,7 @@ class VisitLogListener implements ListenerInterface
 
     public function listen(): array
     {
-        return [VisitLog::class];
+        return [VisitLogEvent::class];
     }
 
     public function process(object $event): void
