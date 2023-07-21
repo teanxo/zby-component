@@ -12,7 +12,7 @@ use Psr\Container\ContainerInterface;
  * 操作事件监听器
  */
 #[Listener]
-class OperationListener implements ListenerInterface
+class VisitLogListener implements ListenerInterface
 {
 
     public function __construct(
@@ -30,6 +30,6 @@ class OperationListener implements ListenerInterface
     {
         $requestInfo = $event->requestInfo;
         $requestInfo['request_data'] = json_encode($requestInfo['request_data'], JSON_UNESCAPED_UNICODE);
-        Db::table('operation_log')->insert($requestInfo);
+        Db::table('visit_log')->insert($requestInfo);
     }
 }

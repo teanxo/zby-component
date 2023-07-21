@@ -11,6 +11,9 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
+/**
+ * 跨域实现
+ */
 class CorsMiddleware implements MiddlewareInterface
 {
 

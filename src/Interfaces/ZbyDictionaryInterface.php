@@ -2,8 +2,6 @@
 
 namespace Hyperf\Zby\Interfaces;
 
-use Hyperf\Collection\Collection;
-
 interface ZbyDictionaryInterface
 {
     /**

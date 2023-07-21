@@ -9,6 +9,10 @@ use Hyperf\Codec\Json;
 use Hyperf\Validation\Request\FormRequest;
 
 
+/**
+ * FormRequest
+ * 验证公共继承类
+ */
 class ZbyFormRequest extends FormRequest
 {
 

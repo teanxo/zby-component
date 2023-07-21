@@ -8,7 +8,7 @@ use Hyperf\Di\Annotation\AbstractAnnotation;
 use Annotation;
 use Attribute;
 /**
- * 登陆验权注解1112222
+ * 登陆验权注解
  * @Annotation
  * @Target({"CLASS","METHOD"})
  */

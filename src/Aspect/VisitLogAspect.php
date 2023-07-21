@@ -6,7 +6,7 @@ use Hyperf\Context\ApplicationContext;
 use Hyperf\Di\Annotation\Aspect;
 use Hyperf\Di\Aop\AbstractAspect;
 use Hyperf\Di\Aop\ProceedingJoinPoint;
-use Hyperf\Zby\Annotation\DataLog;
+use Hyperf\Zby\Annotation\VisitLog;
 use Hyperf\Zby\Event\Operation;
 use Hyperf\Zby\Helper\LoginUser;
 use Hyperf\Zby\Helper\Str;
@@ -16,10 +16,10 @@ use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Http\Message\ResponseInterface;
 
 #[Aspect]
-class LogAspect extends AbstractAspect
+class VisitLogAspect extends AbstractAspect
 {
     public array $annotations = [
-        DataLog::class
+        VisitLog::class
     ];
 
     protected ContainerInterface $container;
@@ -32,7 +32,7 @@ class LogAspect extends AbstractAspect
 
     public function process(ProceedingJoinPoint $proceedingJoinPoint)
     {
-        $annotation = $proceedingJoinPoint->getAnnotationMetadata()->method[DataLog::class];
+        $annotation = $proceedingJoinPoint->getAnnotationMetadata()->method[VisitLog::class];
         /* @var $result ResponseInterface */
         $result = $proceedingJoinPoint->process();
 
