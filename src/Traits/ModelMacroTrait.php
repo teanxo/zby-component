@@ -16,6 +16,7 @@ use Hyperf\Zby\Interfaces\ZbyUserInterface;
 use Hyperf\Zby\ZbyCollection;
 use Hyperf\Zby\ZbyModel;
 
+
 trait ModelMacroTrait
 {
 
