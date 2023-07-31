@@ -90,6 +90,7 @@ trait ModelMacroTrait
         }
     }
 
+
     public function filterEmptyAttributes(array &$data)
     {
         foreach ($data as $key => $datum) {
