@@ -93,7 +93,7 @@ trait ModelMacroTrait
     public function filterEmptyAttributes(array &$data)
     {
         foreach ($data as $key => $datum) {
-            if (!isset($datum) || $datum === '' || $datum === 'undefined' || $datum === null){
+            if (!isset($datum) || $datum === 'undefined' || $datum === null){
                 unset($data[$key]);
             }
         }
