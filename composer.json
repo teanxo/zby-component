@@ -2,7 +2,7 @@
     "name": "taxcode/zby-component",
     "type": "library",
     "license": "MIT",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "keywords": [
         "php",
         "hyperf"
