@@ -2,7 +2,7 @@
     "name": "taxcode/zby-component",
     "type": "library",
     "license": "MIT",
-    "version": "1.4.1",
+    "version": "1.4.3",
     "keywords": [
         "php",
         "hyperf"
@@ -24,8 +24,7 @@
         "hyperf/di": "3.0.*",
         "hyperf/framework": "3.0.*",
         "phpoffice/phpspreadsheet": "^1.24",
-        "zoujingli/ip2region": "^1.0",
-        "lcobucci/jwt": "^4.3"
+        "zoujingli/ip2region": "^1.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
